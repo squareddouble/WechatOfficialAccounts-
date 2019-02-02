@@ -10,4 +10,5 @@
  */
 public interface MessageConfig {
 	public static final String token = "wechatReceiveTonken";//与配置界面的ToKen一致
+
 }
