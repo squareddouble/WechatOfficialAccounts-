@@ -1,7 +1,7 @@
-package Config;
+﻿package Config;
 
 /*
- *		Created by IntelliJ IDEA.
+ *		Created by IntelliJ IDEA1.
  *		User:龙猫
  *		Date: 2019/1/29
  *		Time: 21:03
