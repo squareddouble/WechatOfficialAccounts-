@@ -49,15 +49,14 @@ public class receiveWechatContent extends HttpServlet {
 			//将传来的XML参数解析为Map类型
 			Map<String, String> map = new MessageFormat().xmlToMap(request);
 
-			String fromUserName = map.get("FromUserName");//粉丝号
-			String toUserName = map.get("ToUserName");//公众号
+			String fromUserName = map.get("FromUserName");//发送方账号（一个OpenID）
+			String toUserName = map.get("ToUserName");//开发者公众号
 			String msgType = map.get("MsgType");//发送的消息类型[比如 文字,图片,语音。。。]
 			String content = map.get("Content");//发送的消息内容
 			String message = null;		//输出信息
 			String insertDatabaseMessage = null;		//未格式化的输出信息
 
-			//判断发送的类型是文本
-			if(MessageUtil.MESSAGE_TEXT.equals(msgType)) {
+			if(MessageUtil.MESSAGE_TEXT.equals(msgType)) {			//获取消息类型，判断是否为text
 
 				if ("绑定-".equals(content)){				//如果信息字符串匹配，则执行语句块
 					//要输出的信息
@@ -69,18 +68,29 @@ public class receiveWechatContent extends HttpServlet {
 				//返回信息给微信服务器
 				out.print(message);
 
-			}else if(MessageUtil.MESSAGE_EVENT.equals(msgType)) {	//验证是关注/取消事件
-				String eventType = map.get("Event");	//获取是关注还是取消
-				//关注
-				if (MessageUtil.MESSAGE_SUBSCRIBE.equals(eventType)) {
+			}else if(MessageUtil.MESSAGE_EVENT.equals(msgType)) {		//获取消息类型，判断是否为event
+
+				String eventType = map.get("Event");	//获取事件类型
+
+				if (MessageUtil.MESSAGE_SUBSCRIBE.equals(eventType)) {		//关注
 					//要输出的信息
 					insertDatabaseMessage = "欢迎关注";
 					//封装信息
 					message = MessageFormat.initText(toUserName, fromUserName, insertDatabaseMessage);
 					//返回信息给微信服务器
 					out.print(message);
-				}else if (MessageUtil.MESSAGE_UNSUBSCRIBE.equals(eventType)){
-					//取消关注
+				}else if (MessageUtil.MESSAGE_UNSUBSCRIBE.equals(eventType)){		//取消关注
+
+
+				} else if (MessageUtil.MESSAGE_CLICK.equals(eventType)) {			//点击类型为click的自定义菜单按钮
+
+					String eventKey = map.get("EventKey");	//获取事件KEY值，与自定义菜单接口中KEY值对应
+
+					if (MessageUtil.SCORE_SEARCH.equals(eventKey)){		//当点击“成绩查询”按钮时
+
+					}else if(MessageUtil.ATTENDANCE_QUERY.equals(eventKey)){		//当点击“考勤查询”按钮时
+
+					}
 				}
 			}
 		} catch (Exception e) {
