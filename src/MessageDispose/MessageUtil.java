@@ -20,12 +20,15 @@ public class MessageUtil {
 	public static final String MESSAGE_VIDEO = "video";
 	public static final String MESSAGE_LINK = "link";
 	public static final String MESSAGE_LOCATION = "location";
-	public static final String MESSAGE_EVENT = "event";
+	public static final String MESSAGE_EVENT = "event";				//消息类型
 	public static final String MESSAGE_SUBSCRIBE = "subscribe";		//关注
 	public static final String MESSAGE_UNSUBSCRIBE = "unsubscribe";		//取关
-	public static final String MESSAGE_CLICK = "CLICK";
+	public static final String MESSAGE_CLICK = "CLICK";				//事件类型：点击自定义菜单按钮事件
 	public static final String MESSAGE_VIEW = "VIEW";
 	public static final String MESSAGE_SCANCODE = "scancode_push";
+	//自定义菜单按钮key值
+	public static final String SCORE_SEARCH =  "Score_search";		//成绩查询
+	public static final String ATTENDANCE_QUERY =  "Attendance_query";		//考勤查询
 
 
 
