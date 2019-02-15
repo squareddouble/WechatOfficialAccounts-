@@ -3,4 +3,27 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
+
+    <!--设置传输数据字符集为utf-8过滤器-->
+    <filter>
+        <filter-name>characterFilter</filter-name>
+        <filter-class>Filter.CharacterFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>characterFilter</filter-name>
+        <!--过滤站点下所有网页-->
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <!--用于接受微信信息-->
+    <servlet>
+        <servlet-name>receiveWechatContent</servlet-name>
+        <servlet-class>Config.receiveWechatContent</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>receiveWechatContent</servlet-name>
+        <url-pattern>/receiveWechatContent</url-pattern>
+    </servlet-mapping>
+
+
 </web-app>
