@@ -21,7 +21,7 @@ public class Database {
 	public Database() {			//打开链接
 		try {
 			InitialContext initialContext = new InitialContext();
-			DataSource dataSource = (DataSource) initialContext.lookup("java:comp/env/jdbc/wechatautoresponse");
+			DataSource dataSource = (DataSource) initialContext.lookup("java:comp/env/jdbc/wechatdevelp");
 			connection = dataSource.getConnection();
 		}catch (Exception e){
 			e.printStackTrace();
