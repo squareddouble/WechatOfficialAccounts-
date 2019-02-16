@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+
+    <!--需要执行获取openid操作的URL列表（在自定义菜单中直接填写的URL）;注意配置时最后留写一个英文逗号-->
+    <context-param>
+        <param-name>needWorkingURL</param-name>
+        <param-value>
+            /PIM/main.jsp,
+        </param-value>
+    </context-param>
+
+    <!--设置传输数据字符集为utf-8过滤器-->
+    <filter>
+        <filter-name>characterFilter</filter-name>
+        <filter-class>Filter.CharacterFilter</filter-class>
+    </filter>
+    <!--该过滤器只对指定页面（在自定义菜单中使用snsapi_base方法的页面）进行过滤，获取用户openid并写入session中-->
+    <filter>
+        <filter-name>addFromUserNameToSessionFilter</filter-name>
+        <filter-class>Filter.AddFromUserNameToSessionFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>characterFilter</filter-name>
+        <!--过滤站点下所有网页-->
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>addFromUserNameToSessionFilter</filter-name>
+        <!--对指定页面（在自定义菜单中使用snsapi_base方法的页面）进行过滤-->
+        <url-pattern>*.jsp</url-pattern>
+    </filter-mapping>
+
+
+
+
+    <!--用于接受微信信息-->
+    <servlet>
+        <servlet-name>receiveWechatContent</servlet-name>
+        <servlet-class>Config.receiveWechatContent</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>receiveWechatContent</servlet-name>
+        <url-pattern>/receiveWechatContent</url-pattern>
+    </servlet-mapping>
+
+    <!--用于接受登录页面请求参数-->
+    <servlet>
+    <servlet-name>checkAccountPassword</servlet-name>
+    <servlet-class>Util.PIM.Register.CheckAccountPassword</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>checkAccountPassword</servlet-name>
+        <url-pattern>/CheckAccountPassword</url-pattern>
+    </servlet-mapping>
+
+
+</web-app>
