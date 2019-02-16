@@ -1,6 +1,7 @@
 package Config;
 
 import MessageDispose.*;
+import Util.QueryGarde.QueryGarde;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -82,15 +83,18 @@ public class receiveWechatContent extends HttpServlet {
 				}else if (MessageUtil.MESSAGE_UNSUBSCRIBE.equals(eventType)){		//取消关注
 
 
-				} else if (MessageUtil.MESSAGE_CLICK.equals(eventType)) {			//点击类型为click的自定义菜单按钮
+				}else if (MessageUtil.MESSAGE_CLICK.equals(eventType)) {			//点击类型为click的自定义菜单按钮
 
 					String eventKey = map.get("EventKey");	//获取事件KEY值，与自定义菜单接口中KEY值对应
 
 					if (MessageUtil.SCORE_SEARCH.equals(eventKey)){		//当点击“成绩查询”按钮时
-
+						insertDatabaseMessage = QueryGarde.QueryPersonageGarde(fromUserName);
+						message = MessageFormat.initText(toUserName, fromUserName, insertDatabaseMessage);
 					}else if(MessageUtil.ATTENDANCE_QUERY.equals(eventKey)){		//当点击“考勤查询”按钮时
 
 					}
+				}else if (MessageUtil.MESSAGE_VIEW.equals(eventType)){				//点击类型为view的自定义菜单按钮
+
 				}
 			}
 		} catch (Exception e) {
