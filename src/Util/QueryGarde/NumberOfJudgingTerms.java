@@ -1,4 +1,4 @@
-package JavaBean;
+package Util.QueryGarde;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

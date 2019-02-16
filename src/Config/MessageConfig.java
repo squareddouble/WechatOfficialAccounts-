@@ -1,4 +1,4 @@
-﻿package Config;
+package Config;
 
 /*
  *		Created by IntelliJ IDEA1.
@@ -13,4 +13,6 @@ public interface MessageConfig {
 //	appID和appsecret每个开发账号均不同，请修改为自己账号所对应的变量
 	String appID = "wx849d9ec6361711f8";
 	String appsecret = "43c48b279635a856ac869e6cf758ee6f";
+	//服务器前缀，请改为自己的测试服务器
+	String servletURL = "http://lonmao.iok.la/wechatAutoResponder";
 }

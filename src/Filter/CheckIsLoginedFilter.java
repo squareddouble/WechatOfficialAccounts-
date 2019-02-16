@@ -9,6 +9,8 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
+import static Config.MessageConfig.servletURL;
+
 /*
  *		Created by IntelliJ IDEA.
  *		User:龙猫
@@ -41,6 +43,8 @@ public class CheckIsLoginedFilter implements Filter {
 		String splitPath[] = servletPath.split("/");
 		String Path = splitPath[splitPath.length - 1];
 
+
+
 		//1、判断URL是否需要检查
 		List<String> urls = Arrays.asList(UnNeedCheckingIsLoginURL.split(","));
 		if (urls.contains(Path)){
@@ -58,6 +62,8 @@ public class CheckIsLoginedFilter implements Filter {
 			//向数据库查询是否有该记录，没有返回结果为null
 			studentEncryptionID = database.queryStudentId(openid);
 			if (studentEncryptionID == null){		//如果数据库中也不存在记录，则说明用户从未登录过或已注销，则跳转至登录页面
+				//获取请求头URL，用于成功后跳转
+				httpServletRequest.getSession().setAttribute("Referer", servletURL + servletPath);
 				httpServletResponse.sendRedirect("/wechatAutoResponder/PIM/Register/login.jsp");
 				return;
 			}else {		//如果数据库中有记录则说明已登录，将学生加密ID写入session，放行
