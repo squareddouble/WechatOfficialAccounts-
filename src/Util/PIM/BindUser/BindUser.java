@@ -1,6 +1,7 @@
-package Servlet;
+package Util.PIM.BindUser;
 
 import Data.Database;
+import Util.PIM.Register.CheckedUserUsernamePasswordAndClimbStudentID;
 
 /*
  *		Created by IntelliJ IDEA.

@@ -1,4 +1,4 @@
-package Servlet;
+package Util.QueryGarde;
 
 /*
  *		Created by IntelliJ IDEA.
@@ -9,13 +9,8 @@ package Servlet;
  *       Description:返回学生个人成绩信息
  */
 import Data.Database;
-import JavaBean.NumberOfJudgingTerms;
-import org.apache.commons.httpclient.Cookie;
 import org.apache.commons.httpclient.HttpClient;
-import org.apache.commons.httpclient.NameValuePair;
-import org.apache.commons.httpclient.cookie.CookiePolicy;
 import org.apache.commons.httpclient.methods.GetMethod;
-import org.apache.commons.httpclient.methods.PostMethod;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
