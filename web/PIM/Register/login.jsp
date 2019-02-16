@@ -22,6 +22,15 @@
         h3 {
             text-align: center;
         }
+
+        #footer {
+            position: absolute;
+            bottom: 0;
+            height: 20px;
+            width: 100%;
+            text-align: center;
+            color: grey;
+        }
     </style>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -60,7 +69,7 @@
            </div>
            <div class="form-group">
                       <div class="col-sm-offset-2 col-sm-6">
-                          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;
+                          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                           <button type="submit" name="submit" class="btn btn-primary"  >绑定</button>
                           &nbsp;&nbsp;&nbsp;
                           <button type="reset" name="submit" class="btn btn-primary"  >重置</button>
@@ -68,5 +77,7 @@
            </div>
     </form>
 </div>
+    <div id="footer">Copyright © 2018-2019 Double 当前版本 beta 1.0
+    </div>
 </body>
 </html>
