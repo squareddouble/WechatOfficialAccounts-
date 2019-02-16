@@ -12,6 +12,14 @@
         </param-value>
     </context-param>
 
+    <!--对所有页面过滤，检查是否非法登陆，通过context-param排除不需要检查非法登陆的页面-->
+    <context-param>
+        <param-name>UnNeedCheckingIsLoginURL</param-name>
+        <param-value>
+            index.jsp,test.jsp,login.jsp,jquery-3.2.1.js,bootstrap.min.js,bootstrap.min.css,register.jsp,
+        </param-value>
+    </context-param>
+
     <!--设置传输数据字符集为utf-8过滤器-->
     <filter>
         <filter-name>characterFilter</filter-name>
@@ -21,6 +29,10 @@
     <filter>
         <filter-name>addFromUserNameToSessionFilter</filter-name>
         <filter-class>Filter.AddFromUserNameToSessionFilter</filter-class>
+    </filter>
+    <filter>
+        <filter-name>checkIsLoginedFilter</filter-name>
+        <filter-class>Filter.CheckIsLoginedFilter</filter-class>
     </filter>
     <filter-mapping>
         <filter-name>characterFilter</filter-name>
@@ -32,8 +44,11 @@
         <!--对指定页面（在自定义菜单中使用snsapi_base方法的页面）进行过滤-->
         <url-pattern>*.jsp</url-pattern>
     </filter-mapping>
-
-
+    <filter-mapping>
+        <filter-name>checkIsLoginedFilter</filter-name>
+        <!--对所有jsp页面过滤，检查是否非法登陆，通过context-param排除不需要检查非法登陆的页面-->
+        <url-pattern>*.jsp</url-pattern>
+    </filter-mapping>
 
 
     <!--用于接受微信信息-->
