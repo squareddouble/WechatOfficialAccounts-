@@ -13,6 +13,6 @@
     <title>$Title$</title>
   </head>
   <body>
-  $END$
+  $END$...
   </body>
 </html>
