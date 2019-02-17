@@ -37,29 +37,29 @@
 
     <form class="form-horizontal" action="/wechatAutoResponder/CheckAccountPassword" method="post">
         <div class="form-group">
-            <div class="col-sm-2">
+            <div class="col-sm-2 col-md-2">
                 <img src="../../img/logo.png" class="img-responsive   center-block"   >
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-4 col-md-3">
                 <h3>用户绑定</h3>
             </div>
         </div>
            <div class="form-group">
-                      <label for="StudentID" class="col-sm-1 control-label">学号:</label>
-                      <div class="col-sm-6">
+                      <label for="StudentID" class="col-sm-1 col-md-1 control-label">学号:</label>
+                      <div class="col-sm-6 col-md-5">
                         <input type="text" class="form-control" name="StudentID" id="StudentID"
                                placeholder="请输入你的学号" >
                       </div>
            </div>
            <div class="form-group">
-                      <label for="StudentPassword" class="col-sm-1 control-label">密码:</label>
-                      <div class="col-sm-6">
+                      <label for="StudentPassword" class="col-sm-1 col-md-1 control-label">密码:</label>
+                      <div class="col-sm-6 col-md-5">
                         <input type="password" class="form-control" name="StudentPassword" id="StudentPassword"
                                placeholder="请输入你的密码" >
                       </div>
            </div>
            <div class="form-group">
-                      <div class="col-sm-offset-2 col-sm-6">
+                      <div class="col-sm-offset-2 col-sm-6 col-md-offset-2 col-md-6">
                           &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                           <button type="submit" name="submit" class="btn btn-primary"  >绑定</button>
                           &nbsp;&nbsp;&nbsp;
