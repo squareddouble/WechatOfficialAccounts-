@@ -33,15 +33,13 @@
     </script>
 </head>
 <body>
-<!--- header-top ---->
 <div id="home" class="header-top">
-    <!--- container ---->
     <div class="container">
         <div class="header-logo">
             <a href="#"><img src="../img/logo1.png" alt=""/></a>
         </div>
         <div class="header-top-grids content-top-grid">
-            <div class="col-sm-4 about-nav4">
+            <div class="col-sm-2 about-nav4 ">
                 <img src="../img/right.png" alt=""  onclick="logout()"/>
                 <a class="scroll" href="#services"></a>
                 <p>注销</p>
@@ -49,8 +47,8 @@
             <div class="clear"> </div>
         </div>
         <div class="header-top-grids content-top-grid">
-            <div class="col-sm-4 about-nav4">
-                <img src="../img/paper.png" alt="" />
+            <div class="col-sm-offset-3 about-nav4 ">
+                <a href="www.baidu.com"> <img src="../img/paper.png" alt="" /></a>
                 <a class="scroll" href="#services"></a>
                 <p>联系我们</p>
             </div>
@@ -64,11 +62,9 @@
     </div>
 </div>
 <div class="border"> </div>
-<!--- container ---->
 <div class="container">
 
-    <nav class="navbar navbar-default col-sm-4">
-        <!-- Brand and toggle get grouped for better mobile display -->
+    <nav class="navbar navbar-default col-sm-12">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-menu1" aria-expanded="false">
                 <span class="sr-only">Toggle navigation</span>
@@ -108,7 +104,7 @@
         </div>
     </div>
     <div class="border"> </div>
-    <nav class="navbar navbar-default col-sm-4">
+    <nav class="navbar navbar-default col-sm-12">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-menu2" aria-expanded="false">
                 <span class="sr-only">Toggle navigation</span>
@@ -129,7 +125,7 @@
                     <h5>John Smith</h5>
                     <p>Senior Professor of Software.</p>
                 </div>
-                <div class="col-sm-4 team-grid">
+                <div class="col-sm-offset-3 team-grid">
                     <img src="../img/tec2.jpg" alt="" />
                     <h5>Patric Dow</h5>
                     <p>Senior Professor of Philosophy.</p>
@@ -143,7 +139,7 @@
             <h3>先进的教学</h3>
             <div class="border line"> </div>
             <div class="team-grids-top">
-                <div class="col-sm-4 team-grid">
+                <div class="col-sm-offset-3 team-grid">
                     <img src="../img/e2.jpg" alt="" />
                     <h5>名师指导</h5>
                     <p>不再因为枯燥无味的课堂而烦恼.</p>
@@ -158,12 +154,11 @@
         </div>
     </div>
     <div  class="team">
-        <!-- container -->
         <div class="container">
             <h3>丰富的活动</h3>
             <div class="border line"> </div>
             <div class="team-grids-top">
-                <div class="col-sm-4 team-grid">
+                <div class="col-sm-offset-3 team-grid">
                     <img src="../img/p1.jpg" alt="" />
                     <h5>享受生活</h5>
                     <p>重新定义校园生活.</p>
@@ -178,8 +173,7 @@
         </div>
     </div>
     <div class="border" id="other"> </div>
-    <nav class="navbar navbar-default col-sm-4">
-        <!-- Brand and toggle get grouped for better mobile display -->
+    <nav class="navbar navbar-default col-sm-12">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-menu3" aria-expanded="false">
                 <span class="sr-only">Toggle navigation</span>
