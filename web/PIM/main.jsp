@@ -78,13 +78,6 @@
             </button>
             <a class="navbar-brand" href="#">个人信息管理</a>
         </div>
-        <div id="navbar-menu1" class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-                <li ><a href="#">个人信息</a></li>
-                <li><a href="#">课表查询</a></li>
-                <li><a href="#">考试时间安排</a></li>
-            </ul>
-        </div>
     </nav>
     <div class="border" id="message"> </div>
     <div class="content">
@@ -124,15 +117,6 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="#">教学管理系统</a>
-        </div>
-        <div id="navbar-menu2" class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-                <li ><a href="#">授课教师信息查询</a></li>
-                <li><a href="#">教学资料查询下载</a></li>
-                <li><a href="#">教务通知查询</a></li>
-                <li><a href="#">教学评价</a></li>
-                <li><a href="#">教学调查问卷</a></li>
-            </ul>
         </div>
     </nav>
     <div  class="team">
@@ -204,13 +188,6 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="#">其他功能</a>
-        </div>
-        <div id="navbar-menu3" class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-                <li><a href="#">视频点播</a></li>
-                <li><a href="#">视频直播</a></li>
-                <li><a href="#">社区讨论</a></li>
-            </ul>
         </div>
     </nav>
     <div  class="team">
