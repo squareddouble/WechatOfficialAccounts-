@@ -32,7 +32,7 @@
         }
     </script>
 </head>
-<body>
+<body background="../img/back.PNG">
 <div id="home" class="header-top">
     <div class="container">
         <div class="header-logo">
@@ -47,7 +47,7 @@
             <div class="clear"> </div>
         </div>
         <div class="header-top-grids content-top-grid">
-            <div class="col-sm-offset-3 about-nav4 ">
+            <div class="col-sm-offset-6 about-nav4 ">
                 <a href="www.baidu.com"> <img src="../img/paper.png" alt="" /></a>
                 <a class="scroll" href="#services"></a>
                 <p>联系我们</p>
@@ -63,7 +63,6 @@
 </div>
 <div class="border"> </div>
 <div class="container">
-
     <nav class="navbar navbar-default col-sm-12">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-menu1" aria-expanded="false">
@@ -77,7 +76,6 @@
     </nav>
     <div class="border" id="message"> </div>
     <div class="content">
-        <!--- container ---->
         <div class="container" >
             <div class="row">
                 <div class="col-sm-3 content-top-grid">
@@ -105,7 +103,7 @@
     </div>
     <div class="border"> </div>
     <nav class="navbar navbar-default col-sm-12">
-        <div class="navbar-header">
+        <div class="navbar-header ">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-menu2" aria-expanded="false">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
@@ -115,12 +113,12 @@
             <a class="navbar-brand" href="#">教学管理系统</a>
         </div>
     </nav>
-    <div  class="team">
+    <div  class="team " >
         <div class="container">
             <h3>优秀的师资</h3>
-            <div class="border" id="tec"> </div>
+            <div class="border line" id="tec"> </div>
             <div class="team-grids-top">
-                <div class="col-sm-4 team-grid">
+                <div class="col-sm-4 col-sm-offset-1 team-grid">
                     <img src="../img/tec1.jpg" alt="" />
                     <h5>John Smith</h5>
                     <p>Senior Professor of Software.</p>
@@ -139,12 +137,12 @@
             <h3>先进的教学</h3>
             <div class="border line"> </div>
             <div class="team-grids-top">
-                <div class="col-sm-offset-3 team-grid">
+                <div class="col-sm-4 col-sm-offset-1 team-grid">
                     <img src="../img/e2.jpg" alt="" />
                     <h5>名师指导</h5>
                     <p>不再因为枯燥无味的课堂而烦恼.</p>
                 </div>
-                <div class="col-sm-4 team-grid">
+                <div class="col-sm-offset-3 team-grid">
                     <img src="../img/e4.jpg" alt="" />
                     <h5>课堂互动</h5>
                     <p>高频率互动让学习过程更生动.</p>
@@ -158,12 +156,12 @@
             <h3>丰富的活动</h3>
             <div class="border line"> </div>
             <div class="team-grids-top">
-                <div class="col-sm-offset-3 team-grid">
+                <div class="col-sm-4 col-sm-offset-1 team-grid">
                     <img src="../img/p1.jpg" alt="" />
                     <h5>享受生活</h5>
                     <p>重新定义校园生活.</p>
                 </div>
-                <div class="col-sm-4 team-grid">
+                <div class="col-sm-offset-3 team-grid">
                     <img src="../img/p2.jpg" alt="" />
                     <h5>创业团队</h5>
                     <p>找到更多志同道合的小伙伴.</p>
@@ -185,7 +183,6 @@
         </div>
     </nav>
     <div  class="team">
-        <!-- container -->
         <div class="container">
             <h3>其他功能</h3>
             <div class="border line"> </div>
