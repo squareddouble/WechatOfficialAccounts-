@@ -45,10 +45,10 @@ public class CheckAccountPassword extends HttpServlet {
 			//获取session中的Referer，如果存在则该请求中的Referer为登录页面，不符合跳转回原页面要求
 			String Referer = (String)request.getSession().getAttribute("Referer");
 			//拆分字符串，将请求头的页面拆分出来
-			String splitPath[] = Referer.split("/");
-			String Request_Path = splitPath[splitPath.length - 1];
+//			String splitPath[] = Referer.split("/");
+//			String Request_Path = splitPath[splitPath.length - 1];
 			//如果不为空，则Referer为需要跳转的页面
-			if (Referer != null && !Request_Path.equals("login.jsp") && !Request_Path.equals("login_fail.jsp")){
+			if (Referer != null){
 
 			}else {
 				//否则跳转回主页

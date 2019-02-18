@@ -16,7 +16,7 @@
     <context-param>
         <param-name>UnNeedCheckingIsLoginURL</param-name>
         <param-value>
-            index.jsp,test.jsp,login.jsp,jquery-3.2.1.js,bootstrap.min.js,bootstrap.min.css,register.jsp,login_fail.jsp,
+            index.jsp,test.jsp,login.jsp,jquery-3.2.1.js,bootstrap.min.js,bootstrap.min.css,register.jsp,login_fail.jsp,error_OpenType.jsp,main.jsp
         </param-value>
     </context-param>
 
