@@ -36,12 +36,15 @@ public class AddFromUserNameToSessionFilter implements Filter {
 		String servletPath = request.getServletPath();
 		//获取session中存储的openid
 		String openid = (String)request.getSession().getAttribute("openid");
+		//如果openid为空则写入
+		if (openid == null) {
 
-		//判断URL是否存在XML配置参数中，并且判断session中是否已有openid
-		List<String> urls = Arrays.asList(needWorkingURL.split(","));
-		if (urls.contains(servletPath) && openid == null){
-			//调用静态方法获取用户openid并写入session中；
-			AddFromUserNameToSession.doGet(request, response);
+			//判断URL是否存在XML配置参数中，并且判断session中是否已有openid
+			List<String> urls = Arrays.asList(needWorkingURL.split(","));
+			if (urls.contains(servletPath) && openid == null) {
+				//调用静态方法获取用户openid并写入session中；
+				AddFromUserNameToSession.doGet(request, response);
+			}
 		}
 
 		//否则放行

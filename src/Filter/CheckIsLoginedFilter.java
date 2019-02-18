@@ -61,10 +61,15 @@ public class CheckIsLoginedFilter implements Filter {
 			String openid = (String)httpServletRequest.getSession().getAttribute("openid");
 			//向数据库查询是否有该记录，没有返回结果为null
 			studentEncryptionID = database.queryStudentId(openid);
-			if (studentEncryptionID == null){		//如果数据库中也不存在记录，则说明用户从未登录过或已注销，则跳转至登录页面
+
+			if (studentEncryptionID == null && openid != null){		//如果数据库中也不存在记录且openid不为空，则说明用户是微信端登陆且从未登录过或已注销，则跳转至登录页面
 				//获取请求头URL，用于成功后跳转
 				httpServletRequest.getSession().setAttribute("Referer", servletURL + servletPath);
 				httpServletResponse.sendRedirect("/wechatAutoResponder/PIM/Register/login.jsp");
+				return;
+			}else if (openid == null){
+				//如果openid为空则说明不是微信端登陆，跳转到错误页面
+				httpServletResponse.sendRedirect("http://lonmao.iok.la/wechatAutoResponder/Error/error_OpenType.jsp");
 				return;
 			}else {		//如果数据库中有记录则说明已登录，将学生加密ID写入session，放行
 				httpServletRequest.getSession().setAttribute("studentEncryptionID", studentEncryptionID);
