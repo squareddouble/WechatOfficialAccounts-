@@ -82,7 +82,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>UpdateMenu</servlet-name>
-        <url-pattern>/</url-pattern>
+        <url-pattern>/UpdateMenu</url-pattern>
     </servlet-mapping>
 
 
