@@ -130,18 +130,34 @@ public class Database {
 		}
 	}
 
-	public void insertLog(String fromUserName, String receiveMessage, String responseMessage){			//向content_log表插入用户的操作信息日志
+	//向content_log表插入用户的操作信息日志，返回插入时间
+	public String insertLog(String fromUserName, String receiveMessage){
+		//获取时间
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss");     //格式化
+		StringBuffer date = new StringBuffer(simpleDateFormat.format(new Date()));      //取得当前时间戳
 		try {
-			//获取时间
-			SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss");     //格式化
-			StringBuffer date = new StringBuffer(simpleDateFormat.format(new Date()));      //取得当前时间戳
 			//插入数据库
-			String sql = "insert content_log(createTime,fromUserName,receive_message,response_message) values(?,?,?,?)";
+			String sql = "insert content_log(createTime,fromUserName,receive_message) values(?,?,?)";
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
 			preparedStatement.setString(1,new String(date));
 			preparedStatement.setString(2,fromUserName);
 			preparedStatement.setString(3,receiveMessage);
-			preparedStatement.setString(4,responseMessage);
+			preparedStatement.executeUpdate();
+		}catch (Exception e){
+			e.printStackTrace();
+		}
+		return new String(date);
+	}
+
+	//更新content_log，插入返回给公众号的信息，将接收到的信息和返回信息分开插入，以便出现BUG时可以查看触发情况以复现
+	public void updateLog(String fromUserName, String data, String responseMessage){
+		try {
+			//插入数据库
+			String sql = "update content_log set response_message = ? where fromUserName = ? and createTime = ?";
+			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setString(1, responseMessage);
+			preparedStatement.setString(2, fromUserName);
+			preparedStatement.setString(3, data);
 			preparedStatement.executeUpdate();
 		}catch (Exception e){
 			e.printStackTrace();
