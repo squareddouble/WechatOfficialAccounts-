@@ -10,7 +10,7 @@
 
     </style>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-    <title>Twitter Bootstrap Tutorial - A responsive layout tutorial</title>
+    <title>Main</title>
     <link href="../css/bootstrap.css" rel="stylesheet"/>
     <script>
         var out = localStorage.getItem("StudentID");
