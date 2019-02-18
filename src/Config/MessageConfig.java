@@ -15,4 +15,6 @@ public interface MessageConfig {
 	String appsecret = "43c48b279635a856ac869e6cf758ee6f";
 	//服务器前缀，请改为自己的测试服务器
 	String servletURL = "http://lonmao.iok.la/wechatAutoResponder";
+	//自定义菜单json文件的文件名，路径为项目根目录下的Json目录，不能修改，否则会抛出（FileNotFoundException）异常
+	String CUSTOMIZE_MENUS = "Json" + System.getProperty ("file.separator") + "Menu.json";
 }
