@@ -59,8 +59,10 @@ public class CheckIsLoginedFilter implements Filter {
 		if (studentEncryptionID == null){
 			//获取session中存储的openid
 			String openid = (String)httpServletRequest.getSession().getAttribute("openid");
-			//向数据库查询是否有该记录，没有返回结果为null
-			studentEncryptionID = database.queryStudentId(openid);
+			if (openid != null) {
+				//向数据库查询是否有该记录，没有返回结果为null
+				studentEncryptionID = database.queryStudentId(openid);
+			}
 
 			if (studentEncryptionID == null && openid != null){		//如果数据库中也不存在记录且openid不为空，则说明用户是微信端登陆且从未登录过或已注销，则跳转至登录页面
 				//获取请求头URL，用于成功后跳转
