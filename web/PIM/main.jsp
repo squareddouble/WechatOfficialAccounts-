@@ -47,7 +47,7 @@
             <div class="clear"> </div>
         </div>
         <div class="header-top-grids content-top-grid">
-            <div class="col-sm-offset-6 about-nav4 ">
+            <div class="col-sm-offset-9 about-nav4 ">
                 <a href="www.baidu.com"> <img src="../img/paper.png" alt="" /></a>
                 <a class="scroll" href="#services"></a>
                 <p>联系我们</p>
