@@ -1,9 +1,4 @@
-﻿<%@ page language="java" contentType="text/html;charset=UTF-8" import="java.util.*" pageEncoding="UTF-8"%>
-<%@ page import="Data.Database"%>
-<%
-    String path = request.getContextPath();
-    String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-%>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <style>
@@ -11,32 +6,13 @@
     </style>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
     <title>Twitter Bootstrap Tutorial - A responsive layout tutorial</title>
-    <link href="../css/bootstrap.css" rel="stylesheet"/>
-     <script>
-         var out = localStorage.getItem("StudentID");
-         function logout(out)
-         {
-             $.ajax({
-                 type:"get",
-                 url:"${pageContext.request.contextPath }",
-                 contentType : 'application/json;charset=utf-8', //可能需要去掉，否则Servlet接收到的值为NULL
-                 data:{"id":out},
-                 success:function(data) {
-                     alert(data);
-                     window.location.href="PIM/Register/login.jsp";
-                 },error : function(error) {
-                     alert("发送请求失败");
-                     }
-             }
-             );
-         }
-     </script>
+    <link href="css/bootstrap.css" rel="stylesheet"/>
 </head>
 <body>
 <div class="container">
     <div class="form-group">
     <div class="col-sm-1 col-sm-offset-2 logout">
-        <button type="button" class="btn btn-primary" onclick="logout()" >注销</button>
+        <button type="button" class="btn btn-primary" onclick="out()" >注销</button>
     </div>
     </div>
     <div class="form-group">
@@ -104,8 +80,11 @@
         </div>
     </nav>
 </div>
-<script type="text/javascript" src="../js/jquery-3.2.1.js"></script>
-<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
 </body>
-
+<script>
+    function out() {
+        window.location.href="www.baidu.com"
+</script>
 </html>
