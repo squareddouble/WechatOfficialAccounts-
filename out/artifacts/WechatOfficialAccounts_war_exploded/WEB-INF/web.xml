@@ -71,5 +71,19 @@
         <url-pattern>/CheckAccountPassword</url-pattern>
     </servlet-mapping>
 
+    <!--在服务器启动时自动调用servlet，创建菜单；（在开发时应尽量关闭改功能，因为获取accessToken和创建菜单的接口调用次数有日上限）-->
+    <servlet>
+        <servlet-name>UpdateMenu</servlet-name>
+        <servlet-class>Util.UpdateMenu.UpdateMenu</servlet-class>
+        <!-- 此处指定加载顺序为2,表明还有优先级更高的Servlet要先执行 -->
+        <!-- 当值为 0 或者大于 0 时，表示容器在应用启动时就加载这个 servlet。值越小，启动优先级越高；-->
+        <!-- 当是一个负数时或者没有指定时，表示该 servlet 被调用时才加载。-->
+        <load-on-startup>2</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpdateMenu</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
 
 </web-app>
