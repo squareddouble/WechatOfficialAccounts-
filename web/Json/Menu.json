@@ -1,0 +1,29 @@
+{
+  "button": [
+    {
+      "name": "个人信息",
+      "sub_button": [
+        {
+        	"type": "click",
+        	"name": "解绑账号",
+        	"key": "UN_Bundle"
+        },
+        {
+          "type": "click",
+          "name": "成绩查询",
+          "key": "Score_search"
+        },
+        {
+          "type": "click",
+          "name": "考勤查询",
+          "key": "Attendance_query"
+        },
+        {
+          "type": "view",
+          "name": "个人信息查询",
+          "url": "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx849d9ec6361711f8&redirect_uri=http%3A%2F%2Flonmao.iok.la%2FwechatAutoResponder%2FPIM%2Fmain.jsp&response_type=code&scope=snsapi_base&state=123#wechat_redirect"
+        }
+      ]
+    }
+  ]
+}
