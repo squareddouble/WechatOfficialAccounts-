@@ -26,10 +26,7 @@ public class QueryGarde {
 
 		//如果找不到，则返回未绑定账号信息
 		if (studentId == null || studentId.isEmpty()){
-			message.append("你尚未绑定账号，请先绑定账号！\n回复“绑定-学号-myscse密码”\n即可绑定账号\n" +
-					"例：绑定-1140158147-123456\n" +
-					"若需要解绑请回复“解绑”即可\n" +
-					"该功能目前仅适用于广大华软学生");
+			message.append("你尚未绑定账号，请先绑定账号！<a href='http://lonmao.iok.la/wechatAutoResponder/PIM/Register/login.jsp'>账号绑定</a>");
 			return new String(message);
 		}
 

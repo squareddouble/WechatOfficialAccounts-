@@ -78,7 +78,7 @@ public class receiveWechatContent extends HttpServlet {
 
 				if (MessageUtil.MESSAGE_SUBSCRIBE.equals(eventType)) {		//关注
 					//要输出的信息
-					insertDatabaseMessage = "欢迎关注";
+					insertDatabaseMessage = "欢迎关注，首次关注请绑定账号！<a href='http://lonmao.iok.la/wechatAutoResponder/PIM/Register/login.jsp'>账号绑定</a>";
 					//封装信息
 					message = MessageFormat.initText(toUserName, fromUserName, insertDatabaseMessage);
 					//返回信息给微信服务器
