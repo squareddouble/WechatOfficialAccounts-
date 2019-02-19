@@ -115,18 +115,18 @@
     </nav>
     <div  class="team " >
         <div class="container">
-            <h3>优秀的师资</h3>
+            <h3>教学查询</h3>
             <div class="border line" id="tec"> </div>
             <div class="team-grids-top">
                 <div class="col-sm-4 col-sm-offset-1 team-grid">
                     <img src="../img/tec1.jpg" alt="" />
-                    <h5>John Smith</h5>
-                    <p>Senior Professor of Software.</p>
+                    <h5>授课老师信息查询</h5>
+                    <p>快捷地得到授课老师开设的课程.</p>
                 </div>
                 <div class="col-sm-offset-3 team-grid">
                     <img src="../img/tec2.jpg" alt="" />
-                    <h5>Patric Dow</h5>
-                    <p>Senior Professor of Philosophy.</p>
+                    <h5>教学资料查询下载</h5>
+                    <p>授课老师的教学资料应有尽有.</p>
                 </div>
                 <div class="clear"> </div>
             </div>
@@ -134,18 +134,18 @@
     </div>
     <div  class="team">
         <div class="container">
-            <h3>先进的教学</h3>
+            <h3>教学调查</h3>
             <div class="border line"> </div>
             <div class="team-grids-top">
                 <div class="col-sm-4 col-sm-offset-1 team-grid">
                     <img src="../img/e2.jpg" alt="" />
-                    <h5>名师指导</h5>
-                    <p>不再因为枯燥无味的课堂而烦恼.</p>
+                    <h5>教学考评</h5>
+                    <p>对授课老师进行评价.</p>
                 </div>
                 <div class="col-sm-offset-3 team-grid">
                     <img src="../img/e4.jpg" alt="" />
-                    <h5>课堂互动</h5>
-                    <p>高频率互动让学习过程更生动.</p>
+                    <h5>教学调查问卷</h5>
+                    <p>通过问卷的实行对教学进行评价.</p>
                 </div>
                 <div class="clear"> </div>
             </div>
@@ -153,18 +153,18 @@
     </div>
     <div  class="team">
         <div class="container">
-            <h3>丰富的活动</h3>
+            <h3>教务通知</h3>
             <div class="border line"> </div>
             <div class="team-grids-top">
                 <div class="col-sm-4 col-sm-offset-1 team-grid">
-                    <img src="../img/p1.jpg" alt="" />
-                    <h5>享受生活</h5>
-                    <p>重新定义校园生活.</p>
+                    <img src="../img/ic_p4.jpg" alt="" />
+                    <h5>教务通知查询</h5>
+                    <p>先人一步得到教务处最新消息.</p>
                 </div>
                 <div class="col-sm-offset-3 team-grid">
                     <img src="../img/p2.jpg" alt="" />
-                    <h5>创业团队</h5>
-                    <p>找到更多志同道合的小伙伴.</p>
+                    <h5>学生考勤</h5>
+                    <p>查询有无旷课记录.</p>
                 </div>
                 <div class="clear"> </div>
             </div>
