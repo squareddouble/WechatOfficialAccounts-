@@ -89,6 +89,10 @@ padding:0.5em 0em;
 	background:url(../img/bg.jpg) no-repeat 0px 0px;
 	background-size: 100% 100%;
 }
+.header-bottom{
+	background:url(../img/quotebg.jpg) no-repeat 0px 0px;
+	background-size: 100% 100%;
+}
 .header-text{
 	text-align:center;
 	margin-top: 3%;

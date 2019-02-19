@@ -207,6 +207,34 @@
         </div>
         <div class="border line"> </div>
     </div>
+    <div  class="header-top" >
+        <div class="container">
+            <div class="header-logo">
+                <a href="#"><img src="../img/logo1.png" alt=""/></a>
+            </div>
+            <div class="header-top-grids content-top-grid">
+                <div class="col-sm-2 about-nav4 ">
+                    <img src="../img/twitter.png" alt=""  onclick="logout()"/>
+                    <a class="scroll" href="#services"></a>
+                    <p>团队信息</p>
+                </div>
+                <div class="clear"> </div>
+            </div>
+            <div class="header-top-grids content-top-grid">
+                <div class="col-sm-offset-9 about-nav4 ">
+                    <a href=""> <img src="../img/facebook.png" alt="" /></a>
+                    <a class="scroll" href="#services"></a>
+                    <p>合作联系</p>
+                </div>
+                <div class="clear"> </div>
+            </div>
+        </div>
+        <div class="arrow-grid">
+            <div class="arrow">
+                <a class="scroll" href="#header-nav"><span> </span></a>
+            </div>
+        </div>
+    </div>
 </div>
 <script type="text/javascript" src="../js/jquery-3.2.1.js"></script>
 <script type="text/javascript" src="../js/bootstrap.min.js"></script>
