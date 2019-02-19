@@ -124,7 +124,7 @@
                     <p>快捷地得到授课老师开设的课程.</p>
                 </div>
                 <div class="col-sm-offset-3 team-grid">
-                    <img src="../img/pic1.jpg" alt="" />
+                    <img src="../img/tec2.jpg" alt="" />
                     <h5>教学资料查询下载</h5>
                     <p>授课老师的教学资料应有尽有.</p>
                 </div>
@@ -157,7 +157,7 @@
             <div class="border line"> </div>
             <div class="team-grids-top">
                 <div class="col-sm-4 col-sm-offset-1 team-grid">
-                    <img src="../img/tec2.jpg" alt="" />
+                    <img src="../img/pic1.jpg" alt="" />
                     <h5>教务通知查询</h5>
                     <p>先人一步得到教务处最新消息.</p>
                 </div>
