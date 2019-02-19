@@ -210,7 +210,7 @@
 </div>
 <div class="top-nav">
     <ul id="menu" class="nav1">
-        <li><a href="#message" class="scroll">个人信息</a></li>
+        <li><a href="#message" class="scroll">个人信息管理</a></li>
         <li><a href="#tec" class="scroll">教学管理系统</a></li>
         <li><a href="#other" class="scroll">其他功能</a></li>
     </ul>
