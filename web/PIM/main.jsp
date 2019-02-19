@@ -116,7 +116,7 @@
 </nav>
 <div  class="team " >
     <div class="container">
-        <h3>教学查询</h3>
+        <p style="font-size: 15px"><b>教学查询</b></p>
         <div class="border line" > </div>
         <div class="row">
             <div class="col-sm-4 col-sm-offset-1 team-grid ">
@@ -135,7 +135,7 @@
 </div>
 <div  class="team">
     <div class="container">
-        <h3>教学调查</h3>
+        <p style="font-size: 15px"><b>教学调查</b></p>
         <div class="border line"> </div>
         <div class="row">
             <div class="col-sm-4 col-sm-offset-1 team-grid">
@@ -154,7 +154,7 @@
 </div>
 <div  class="team">
     <div class="container">
-        <h3>教务通知</h3>
+        <p style="font-size: 15px"><b>教务通知</b></p>
         <div class="border line"> </div>
         <div class="row">
             <div class="col-sm-4 col-sm-offset-1 team-grid">
@@ -185,7 +185,7 @@
 </nav>
 <div  class="team">
     <div class="container">
-        <h3>其他功能</h3>
+        <p style="font-size: 15px"><b>其他功能</b></p>
         <div class="border line"> </div>
         <div class="team-grids-top">
             <div class="col-sm-4 team-grid">
