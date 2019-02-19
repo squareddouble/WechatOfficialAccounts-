@@ -117,7 +117,7 @@
         <div class="container">
             <h3>教学查询</h3>
             <div class="border line" id="tec"> </div>
-            <div class="team-grids-top">
+            <div class="row">
                 <div class="col-sm-4 col-sm-offset-1 team-grid">
                     <img src="../img/tec1.jpg" alt="" />
                     <h5>授课老师信息查询</h5>
@@ -136,7 +136,7 @@
         <div class="container">
             <h3>教学调查</h3>
             <div class="border line"> </div>
-            <div class="team-grids-top">
+            <div class="row">
                 <div class="col-sm-4 col-sm-offset-1 team-grid">
                     <img src="../img/e2.jpg" alt="" />
                     <h5>教学考评</h5>
@@ -155,7 +155,7 @@
         <div class="container">
             <h3>教务通知</h3>
             <div class="border line"> </div>
-            <div class="team-grids-top">
+            <div class="row">
                 <div class="col-sm-4 col-sm-offset-1 team-grid">
                     <img src="../img/pic1.jpg" alt="" />
                     <h5>教务通知查询</h5>
