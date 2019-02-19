@@ -23,7 +23,7 @@
                     data:{"id":out},
                     success:function(data) {
                         alert(data);
-                        window.location.href="PIM/Register/login.jsp";
+                        window.location.href="Register/login.jsp";
                     },error : function(error) {
                         alert("发送请求失败");
                     }
