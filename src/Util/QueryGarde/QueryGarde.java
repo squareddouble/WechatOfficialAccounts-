@@ -57,14 +57,14 @@ public class QueryGarde {
 			Element table = tables.get(6);
 			Elements trs = table.getElementsByTag("tr");
 			//遍历过滤元素，找到成绩table中所有tr标签
-			message.append("==========必修课==========\n");
+			message.append("========必修课========\n");
 			for (Element tr : trs) {
 				if (tr.child(7).text().equals(schoolYear)) {        //判断第八个td是否和当前学年一样，例如“2018年第一学期”
 					message.append("【" + tr.child(2).text() + "】：" + tr.child(8).text() + "\n");
 				}
 			}
 
-			message.append("\n==========选修课==========\n");
+			message.append("\n========选修课========\n");
 			//第十个table标签为选修课程标签
 			Element chooseClassTable = tables.get(9);
 			//遍历获取tr

@@ -63,7 +63,7 @@ public class QueryAttendance {
 			Element table = tables.get(6);
 			Elements trs = table.getElementsByTag("tr");
 			//遍历过滤元素，找到成绩table中所有tr标签
-			message.append("=========考勤信息=========\n");
+			message.append("======考勤信息======\n");
 			message.append(time + "：\n");
 
 			//布尔变量，用于判断考勤是否有缺勤或迟到或请假记录
