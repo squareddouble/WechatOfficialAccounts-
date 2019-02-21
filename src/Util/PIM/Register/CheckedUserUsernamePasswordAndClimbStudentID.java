@@ -8,7 +8,11 @@ import org.apache.commons.httpclient.methods.GetMethod;
 import org.apache.commons.httpclient.methods.PostMethod;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /*
  *		Created by IntelliJ IDEA.
@@ -19,7 +23,9 @@ import org.jsoup.select.Elements;
  *       Description:验证用户账号密码是否正确，若正确则爬取学生ID并返回，不正确则返回数值为null的studentID
  */
 public class CheckedUserUsernamePasswordAndClimbStudentID {
-	public static String CheckedUserUsernamePasswordAndClimbStudentID(String username, String password){
+	public static Map CheckedUserUsernamePasswordAndClimbStudentID(String username, String password){
+		//Map数组
+		Map<String, String> map = new HashMap<String, String>();
 		//学生ID
 		String studentID = null;
 		// 登陆 Url
@@ -73,7 +79,7 @@ public class CheckedUserUsernamePasswordAndClimbStudentID {
 
 			//判断是否登录成功
 			if (homeHtml.indexOf("/sise/login.jsp") != -1){			//!-1则找到，既是登陆失败,返回数值为null的studentID
-				return studentID;
+				return map;
 			}
 
 			//使用完后关闭连接
@@ -89,11 +95,23 @@ public class CheckedUserUsernamePasswordAndClimbStudentID {
 			studentID = personalInformationForHomeUrl.split("studentid=")[1];
 			studentID = studentID.split("'")[0];
 
+			//获取“考勤查询”的tr
+			Elements attendanceQueryForHomeTagTr = homeDocument.getElementsByAttributeValue("title", "考勤");
+			//获取该标签onclick后执行跳转操作的链接
+			String attendanceQueryForHomeUrl = attendanceQueryForHomeTagTr.get(0).child(0).attr("onclick");
+			//获取gzcode
+			String gzcode = attendanceQueryForHomeUrl.split("gzcode=")[1];
+			gzcode = gzcode.split("'")[0];
+
+			//将studentID和gzcode写入map数组
+			map.put("studentID", studentID);
+			map.put("gzcode", gzcode);
+
 			System.out.println("studentid：" + studentID);
 
 		}catch (Exception e){
 			e.printStackTrace();
 		}
-		return studentID;
+		return map;
 	}
 }
