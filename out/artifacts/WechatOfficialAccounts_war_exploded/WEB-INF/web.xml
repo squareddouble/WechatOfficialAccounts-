@@ -8,7 +8,7 @@
     <context-param>
         <param-name>needWorkingURL</param-name>
         <param-value>
-            /PIM/main.jsp,
+            /PIM/main.jsp,/PIM/Register/login.jsp,
         </param-value>
     </context-param>
 
@@ -16,7 +16,7 @@
     <context-param>
         <param-name>UnNeedCheckingIsLoginURL</param-name>
         <param-value>
-            index.jsp,test.jsp,login.jsp,jquery-3.2.1.js,bootstrap.min.js,bootstrap.min.css,register.jsp,login_fail.jsp,
+            index.jsp,test.jsp,login.jsp,jquery-3.2.1.js,bootstrap.min.js,bootstrap.min.css,register.jsp,login_fail.jsp,error_OpenType.jsp,main.jsp
         </param-value>
     </context-param>
 
@@ -82,7 +82,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>UpdateMenu</servlet-name>
-        <url-pattern>/</url-pattern>
+        <url-pattern>/UpdateMenu</url-pattern>
     </servlet-mapping>
 
 

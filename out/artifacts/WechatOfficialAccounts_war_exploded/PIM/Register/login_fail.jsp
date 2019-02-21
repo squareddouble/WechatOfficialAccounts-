@@ -14,7 +14,7 @@
             text-align: center;
         }
         #footer {
-            position: absolute;
+            position: fixed;
             bottom: 0;
             height: 20px;
             width: 100%;
