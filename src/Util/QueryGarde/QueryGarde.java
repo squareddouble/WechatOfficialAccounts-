@@ -8,6 +8,7 @@ package Util.QueryGarde;
  *       email: foxmaillucien@126.com
  *       Description:返回学生个人成绩信息
  */
+import Config.MessageConfig;
 import Data.Database;
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.methods.GetMethod;
@@ -26,7 +27,7 @@ public class QueryGarde {
 
 		//如果找不到，则返回未绑定账号信息
 		if (studentId == null || studentId.isEmpty()){
-			message.append("你尚未绑定账号，请先绑定账号！<a href='http://lonmao.iok.la/wechatAutoResponder/PIM/Register/login.jsp'>账号绑定</a>");
+			message.append(MessageConfig.UNLOGINMESSAGE);
 			return new String(message);
 		}
 

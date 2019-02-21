@@ -2,6 +2,7 @@ package Config;
 
 import Data.Database;
 import MessageDispose.*;
+import Util.QueryAttendance.QueryAttendance;
 import Util.QueryGarde.QueryGarde;
 
 import javax.servlet.ServletException;
@@ -93,7 +94,7 @@ public class receiveWechatContent extends HttpServlet {
 					if (MessageUtil.SCORE_SEARCH.equals(eventKey)){		//当点击“成绩查询”按钮时
 						//接收到的信息，用于插入日志数据库
 						String receiveMessage = "“成绩查询”按钮点击事件";
-						//将操作和的信息插入数据库，返回创建的试卷
+						//将接收到的信息和用户openid插入数据库，返回创建的时间
 						String createTime = database.insertLog(fromUserName, receiveMessage);
 
 						//执行请求操作
@@ -103,10 +104,23 @@ public class receiveWechatContent extends HttpServlet {
 						out.print(message);
 
 						//将返回的信息插入数据库
-						database.updateLog(fromUserName, createTime, message);
+						database.updateLog(fromUserName, createTime, insertDatabaseMessage);
 
 
 					}else if(MessageUtil.ATTENDANCE_QUERY.equals(eventKey)){		//当点击“考勤查询”按钮时
+						//接收到的信息，用于插入日志数据库
+						String receiveMessage = "“考勤查询”按钮点击事件";
+						//将接收到的信息和用户openid插入数据库，返回创建的时间
+						String createTime = database.insertLog(fromUserName, receiveMessage);
+
+						//执行请求操作
+						insertDatabaseMessage = QueryAttendance.QueryAttendance(fromUserName);
+						message = MessageFormat.initText(toUserName, fromUserName, insertDatabaseMessage);
+						//返回信息给微信服务器
+						out.print(message);
+
+						//将返回的信息插入数据库
+						database.updateLog(fromUserName, createTime, insertDatabaseMessage);
 
 					}
 				}else if (MessageUtil.MESSAGE_VIEW.equals(eventType)){				//点击类型为view的自定义菜单按钮
