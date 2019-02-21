@@ -30,7 +30,7 @@ public class CheckAccountPassword extends HttpServlet {
 		Database database = new Database();
 
 		//信息插入log表
-		String data = database.insertLog(openid, "用户登录！账号为：" + StudentID + "，密码为：" + StudentPassword + "；");
+		String data = database.insertLog(openid, "用户登录！账号为：" + StudentID + "，密码为：" + StudentPassword);
 
 		//调用方法检查账号密码是否正确，正确则返回该学生的加密ID，不正确则返回null
 		Map<String, String> map = CheckedUserUsernamePasswordAndClimbStudentID.CheckedUserUsernamePasswordAndClimbStudentID(StudentID, StudentPassword);
