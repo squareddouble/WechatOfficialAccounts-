@@ -68,6 +68,20 @@ public class receiveWechatContent extends HttpServlet {
 					insertDatabaseMessage = "收到信息";
 					//封装信息
 					message = MessageFormat.initText(toUserName, fromUserName, insertDatabaseMessage);
+				}else {		//如果接收到没有设置好的匹配信息则执行以下代码块
+					//接收到的信息，用于插入日志数据库
+					String receiveMessage = "用户发送信息：" + content;
+					//将接收到的信息和用户openid插入数据库，返回创建的时间
+					String createTime = database.insertLog(fromUserName, receiveMessage);
+
+					//执行请求操作
+					insertDatabaseMessage = "对不起，我听不懂。";
+					message = MessageFormat.initText(toUserName, fromUserName, insertDatabaseMessage);
+					//返回信息给微信服务器
+					out.print(message);
+
+					//将返回的信息插入数据库
+					database.updateLog(fromUserName, createTime, insertDatabaseMessage);
 				}
 
 				//返回信息给微信服务器
