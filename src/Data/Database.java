@@ -48,6 +48,26 @@ public class Database {
 		return studentId;
 	}
 
+	public String queryStudentGzcode(String fromUserName){		//根据用户ID查询其对应的学生gzcode，不存在则返回null
+		String gzcode = null;
+		try {
+			//向数据库查询
+			String sql = "select studentid,gzcode from user_messages where fromUserName = ? and is_delete != 1";
+			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setString(1,fromUserName);
+			ResultSet resultSet = preparedStatement.executeQuery();
+
+			if (resultSet.next()){		//判断记录是否存在，存在则向上移动一行，将studentid赋值
+				gzcode = resultSet.getString(2);
+			}else {
+				return null;
+			}
+		}catch (Exception e){
+			e.printStackTrace();
+		}
+		return gzcode;
+	}
+
 	public void insertUser(String username, String password){		//向users表插入验证正确的用户名和密码
 		try {
 			//插入前先查询是否存在该账号
@@ -75,7 +95,7 @@ public class Database {
 		}
 	}
 
-	public void insertUserMessage(String fromUserName, String username, String studentID){			//向user_messages表插入用户名，学生加密ID，公众号绑定ID
+	public void insertUserMessage(String fromUserName, String username, String studentID, String gzcode){			//向user_messages表插入用户名，学生加密ID，公众号绑定ID
 		try {
 			//插入前先查询数据库中是否有记录
 			String queryExistSql = "select * from user_messages where fromUserName = ?";
@@ -83,18 +103,20 @@ public class Database {
 			queryExistStatement.setString(1,fromUserName);
 			ResultSet resultSet = queryExistStatement.executeQuery();
 			if (resultSet.next()){			//如果有，则更新绑定状态
-				String sql = "update user_messages set username = ?,studentid = ?,is_delete = 0 where fromUserName = ?";
+				String sql = "update user_messages set username = ?,studentid = ?,gzcode = ?,is_delete = 0 where fromUserName = ?";
 				PreparedStatement preparedStatement = connection.prepareStatement(sql);
-				preparedStatement.setString(1,username);
-				preparedStatement.setString(2,studentID);
-				preparedStatement.setString(3,fromUserName);
+				preparedStatement.setString(1, username);
+				preparedStatement.setString(2, studentID);
+				preparedStatement.setString(3, gzcode);
+				preparedStatement.setString(4, fromUserName);
 				preparedStatement.executeUpdate();
 			}else {							//没有则执行插入
-				String sql = "insert user_messages values(?,?,?,0)";
+				String sql = "insert user_messages values(?,?,?,?,0)";
 				PreparedStatement preparedStatement = connection.prepareStatement(sql);
-				preparedStatement.setString(1,fromUserName);
-				preparedStatement.setString(2,username);
-				preparedStatement.setString(3,studentID);
+				preparedStatement.setString(1, fromUserName);
+				preparedStatement.setString(2, username);
+				preparedStatement.setString(3, studentID);
+				preparedStatement.setString(4, gzcode);
 				preparedStatement.executeUpdate();
 			}
 		}catch (Exception e){
