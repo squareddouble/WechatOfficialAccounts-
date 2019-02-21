@@ -71,7 +71,15 @@ public class QueryAttendance {
 			for (Element tr : trs) {
 				//判断第3个td是否有缺勤或迟到或请假，!=-1则说明找到，即有缺勤或迟到或请假
 				if (tr.child(2).text().indexOf("迟到") != -1 || tr.child(2).text().indexOf("旷课") != -1 || tr.child(2).text().indexOf("请假") != -1) {
-					message.append("【" + tr.child(1).text() + "】：" + tr.child(2).text() + "\n");
+					//分离点击请假次数的数字所跳转的URL
+					String url = tr.child(2).child(0).attr("href");
+					url = url.replace("../", "");
+					url = "http://class.sise.com.cn:7001/" + url;
+
+					//记录次数
+					String DataTime = tr.child(2).text().substring(3,4);
+
+					message.append("【" + tr.child(1).text() + "】：" + tr.child(2).text().replace(DataTime, "<a href = '" + url + "'>" + DataTime + "</a>") + "\n");
 					isAddMessage = true;
 				}
 			}
