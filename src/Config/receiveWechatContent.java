@@ -2,6 +2,7 @@ package Config;
 
 import Data.Database;
 import MessageDispose.*;
+import Util.PIM.UnBind.UnBindUser;
 import Util.QueryAttendance.QueryAttendance;
 import Util.QueryGarde.QueryGarde;
 
@@ -136,6 +137,20 @@ public class receiveWechatContent extends HttpServlet {
 						//将返回的信息插入数据库
 						database.updateLog(fromUserName, createTime, insertDatabaseMessage);
 
+					}else if (MessageUtil.UN_BUNDLE.equals(eventKey)){			//当点击“解除绑定”按钮时
+						//接收到的信息，用于插入日志数据库
+						String receiveMessage = "“接触绑定”按钮点击事件";
+						//将接收到的信息和用户openid插入数据库，返回创建的时间
+						String createTime = database.insertLog(fromUserName, receiveMessage);
+
+						//执行请求操作
+						insertDatabaseMessage = UnBindUser.UnBindUser(fromUserName);
+						message = MessageFormat.initText(toUserName, fromUserName, insertDatabaseMessage);
+						//返回信息给微信服务器
+						out.print(message);
+
+						//将返回的信息插入数据库
+						database.updateLog(fromUserName, createTime, insertDatabaseMessage);
 					}
 				}else if (MessageUtil.MESSAGE_VIEW.equals(eventType)){				//点击类型为view的自定义菜单按钮
 

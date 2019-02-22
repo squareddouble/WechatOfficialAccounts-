@@ -29,7 +29,7 @@ public class MessageUtil {
 	//自定义菜单按钮key值
 	public static final String SCORE_SEARCH =  "Score_search";		//成绩查询
 	public static final String ATTENDANCE_QUERY =  "Attendance_query";		//考勤查询
-
+	public static final String UN_BUNDLE =  "UN_Bundle";		//考勤查询
 
 
 	public static String menuText() {

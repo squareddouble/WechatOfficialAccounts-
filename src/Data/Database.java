@@ -1,5 +1,7 @@
 package Data;
 
+import Config.MessageConfig;
+
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 import java.sql.Connection;
@@ -187,8 +189,8 @@ public class Database {
 	}
 
 	public String deleteUser(String fromUserName){				//用户发送解绑请求时，逻辑删除用户信息
-		//数据已处于逻辑删除状态或数据不存在时，返回提醒信息，正常时返回null
-		String message = null;
+		//数据已处于逻辑删除状态或数据不存在时，返回提醒信息，正常时返回成功信息
+		String message = "解绑成功！如需使用服务请再次绑定账号！<a href='https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx849d9ec6361711f8&redirect_uri=http://lonmao.iok.la/wechatAutoResponder/PIM/Register/login.jsp&response_type=code&scope=snsapi_base&state=123#wechat_redirect'>账号绑定</a>";
 		try {
 			//解绑请求时，逻辑删除user_messages表中信息，既当is_delete为0时是扭转is_delete状态
 			String sql = "select is_delete from user_messages where fromUserName = ?";
@@ -200,14 +202,10 @@ public class Database {
 				if (isDeleteState == 0){	//如果未删除，则执行逻辑删除操作
 					reverseIsDeleteState(fromUserName);
 				}else {						//如果已经是删除状态，则退出
-					message = "你尚未绑定账号，请先绑定账号！\n回复“绑定-学号-myscse密码”\n即可绑定账号\n" +
-							"例：绑定-1140158147-123456\n" +
-							"若需要解绑请回复“解绑”即可";
+					message = MessageConfig.UNLOGINMESSAGE;
 				}
 			}else {							//如果不在该数据，则退出并返回提醒
-				message = "你尚未绑定账号，请先绑定账号！\n回复“绑定-学号-myscse密码”\n即可绑定账号\n" +
-						"例：绑定-1140158147-123456\n" +
-						"若需要解绑请回复“解绑”即可";
+				message = MessageConfig.UNLOGINMESSAGE;
 			}
 		}catch (Exception e){
 			e.printStackTrace();
