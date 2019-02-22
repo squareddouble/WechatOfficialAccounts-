@@ -10,6 +10,8 @@ import java.sql.ResultSet;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import static Config.MessageConfig.servletURL;
+
 /*
  *		Created by IntelliJ IDEA.
  *		User:龙猫
@@ -190,7 +192,7 @@ public class Database {
 
 	public String deleteUser(String fromUserName){				//用户发送解绑请求时，逻辑删除用户信息
 		//数据已处于逻辑删除状态或数据不存在时，返回提醒信息，正常时返回成功信息
-		String message = "解绑成功！如需使用服务请再次绑定账号！<a href='https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx849d9ec6361711f8&redirect_uri=http://lonmao.iok.la/wechatAutoResponder/PIM/Register/login.jsp&response_type=code&scope=snsapi_base&state=123#wechat_redirect'>账号绑定</a>";
+		String message = "解绑成功！如需使用服务请再次绑定账号！<a href='https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx849d9ec6361711f8&redirect_uri=" + MessageConfig.servletURL + "/PIM/Register/login.jsp&response_type=code&scope=snsapi_base&state=123#wechat_redirect'>账号绑定</a>";
 		try {
 			//解绑请求时，逻辑删除user_messages表中信息，既当is_delete为0时是扭转is_delete状态
 			String sql = "select is_delete from user_messages where fromUserName = ?";

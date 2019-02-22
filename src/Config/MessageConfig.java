@@ -19,5 +19,5 @@ public interface MessageConfig {
 	String CUSTOMIZE_MENUS = "Json" + System.getProperty ("file.separator") + "Menu.json";
 
 	//执行查询成绩和考勤操作时验证未绑定账号返回信息
-	String UNLOGINMESSAGE = "你尚未绑定账号，请先绑定账号！<a href='https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx849d9ec6361711f8&redirect_uri=http://lonmao.iok.la/wechatAutoResponder/PIM/Register/login.jsp&response_type=code&scope=snsapi_base&state=123#wechat_redirect'>账号绑定</a>";
+	String UNLOGINMESSAGE = "你尚未绑定账号，请先绑定账号！<a href='https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx849d9ec6361711f8&redirect_uri=" + servletURL + "/PIM/Register/login.jsp&response_type=code&scope=snsapi_base&state=123#wechat_redirect'>账号绑定</a>";
 }
