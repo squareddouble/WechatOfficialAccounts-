@@ -61,8 +61,9 @@ public class QueryAttendance {
 
 			//第六个table
 			Element table = tables.get(6);
-			Elements trs = table.getElementsByTag("tr");
 			//遍历过滤元素，找到成绩table中所有tr标签
+			Elements trs = table.getElementsByTag("tr");
+
 			message.append("======考勤信息======\n");
 			message.append(time + "：\n");
 
