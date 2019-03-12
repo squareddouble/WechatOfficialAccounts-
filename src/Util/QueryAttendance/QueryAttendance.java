@@ -94,6 +94,7 @@ public class QueryAttendance {
 		}
 		catch (Exception e) {
 			e.printStackTrace();
+			message.append("恭喜您！您没有不良记录，请继续保持！\n");
 		}
 		return new String(message);
 	}
