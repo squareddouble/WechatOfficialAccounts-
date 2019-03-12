@@ -94,7 +94,7 @@ public class receiveWechatContent extends HttpServlet {
 
 				if (MessageUtil.MESSAGE_SUBSCRIBE.equals(eventType)) {		//关注
 					//要输出的信息
-					insertDatabaseMessage = "欢迎关注，首次关注请绑定账号！<a href='https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx849d9ec6361711f8&redirect_uri=" + MessageConfig.servletURL + "/PIM/Register/login.jsp&response_type=code&scope=snsapi_base&state=123#wechat_redirect'>账号绑定</a>";
+					insertDatabaseMessage = "欢迎关注，首次关注请绑定账号！<a href='https://open.weixin.qq.com/connect/oauth2/authorize?appid=" + MessageConfig.appID + "&redirect_uri=" + MessageConfig.servletURL + "/PIM/Register/login.jsp&response_type=code&scope=snsapi_base&state=123#wechat_redirect'>账号绑定</a>";
 					//封装信息
 					message = MessageFormat.initText(toUserName, fromUserName, insertDatabaseMessage);
 					//返回信息给微信服务器
